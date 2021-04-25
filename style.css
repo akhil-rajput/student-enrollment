@@ -1,0 +1,168 @@
+html{
+    font-size: 64%;
+}
+.container{
+    border: 0.17rem solid black;
+}
+.dividerLine{
+    border-right: 0rem solid #47d7ac;
+}
+.studentName,.studentEmail,.studentWebsite,.studentImage{
+    width: 60%;
+    padding: .4rem;
+    font-size: 2rem;
+}
+
+.sudentFormHeading{
+    background-color: #47d7ac;
+    text-align: center;
+    font-size: 2.3rem;
+    color:white;
+    font-weight: bold;
+    padding:0.2rem;
+    border-bottom: 0.17rem solid black;
+}
+
+.studentFormFooter{
+    background-color: #47d7ac;
+    text-align: center;
+    font-size: 1.4rem;
+    color:white;
+    font-weight: bold;
+    padding:0.5rem;
+    border-top: 0.17rem solid black;
+}
+#student-form{
+    font-size: 1.7rem;
+    margin-left: 2rem;
+}
+.submitBtn{
+    display: inline-block;
+    width:12rem;
+    padding: 0.5rem;
+    font-size:1.5rem;
+}
+.clearBtn{
+    margin-left: 1rem;
+    display: inline-block;
+    width:7rem;
+    padding: 0.5rem;
+    font-size:1.5rem;
+}
+.dividerLine{
+    border-right: 0.25rem solid #47d7ac;
+}
+#studentTable{
+    margin-bottom: 2.4rem;
+    border-collapse: collapse;
+    margin-left:4.5rem;
+    margin-top: 2.8rem;
+}
+
+#description{
+    padding-right:20rem ;
+    font-size: 1.7rem;
+}
+#image{
+    padding-right: 10rem;
+    font-size: 1.7rem;
+}
+
+@media screen and (max-width: 576px) {
+    html{
+        font-size: 38%;
+    }
+    
+    .dividerLine{
+        border-right: 0rem solid #47d7ac;
+    }
+    #description{
+        padding-right: 10rem;
+    }
+    #image{
+        padding-right:4rem ;
+    }
+   
+  }
+@media screen and (max-width: 768px) {
+    html{
+        font-size: 57%;
+    }
+    #studentTable{
+        margin-left: .1rem;
+    }
+    .dividerLine{
+        border-right: 0rem solid #47d7ac;
+    }
+   
+  }
+
+@media screen and (max-width: 992px) {
+   
+    #studentTable{
+        margin-left: .1rem;
+    }
+    .dividerLine{
+        border-right: 0rem solid #47d7ac;
+    }
+   
+  }
+@media screen and (max-width: 1200px) {
+    
+    #studentTable{
+        margin-left: .1rem;
+    }
+    .dividerLine{
+        border-right: 0rem solid #47d7ac;
+    }
+
+    
+   
+  }
+ 
+#studentTable{
+    margin-left: 2rem;
+}
+
+.tableHeading{
+  text-align: center; 
+  font-weight: bold; 
+  font-size: 2rem; 
+  margin-top: 0.2rem;
+  }
+
+table th{
+    border:solid .2rem #b8f10b;
+    padding:.4rem;
+    color: white;
+    background-color: #9fcf10;
+    font-size: 1.2rem;
+}
+
+table td{
+    border:solid 0.1rem #9aca08;
+    font-size: 2rem;
+    padding-left: 0.3rem;
+   
+}
+
+img{
+    width:15.3rem;
+    height: 15rem;
+}
+#dynamicallyAddedTableRow{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+tr:nth-child(even) {background-color:#dff1ab;}
+

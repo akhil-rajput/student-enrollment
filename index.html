@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+            <!-- My Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    <title>ToDoApp</title>
+</head>
+
+<body>
+    <div class="container my-3">
+        <div class="row">
+            <!-- Student Enrollment Form Header -->
+            <div class="col-xl-12 col-12 col-md-12 col-sm-12 col-lg-12 sudentFormHeading">
+                Student Enrollment Form
+            </div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-xl-6 col-lg-12 col-12 col-md-12 col-sm-12 dividerLine">
+                        <!-- Student Information Form -->
+                <form class="form" method="POST" id="student-form" onsubmit="takeValues();return false;">
+
+                    <div class="form-group row">
+                        <label for="exampleInputName1"
+                            class="col-xl-3 col-lg-3 col-md-12 col-sm-12  col-form-label">Name</label>
+                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+                            <input type="text" id="exampleInputName1" class="form-control studentName "
+                                name="exampleInputName1" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1"
+                            class="col-xl-3 col-lg-3 col-md-12 col-sm-12  col-form-label">Email</label>
+                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+                            <input id="exampleInputEmail1" type="email" class="form-control studentEmail "
+                                name="exampleInputEmail1" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <label for="exampleInputWebsite1"
+                            class="col-xl-3 col-lg-3 col-md-12 col-sm-12  col-form-label">Website</label>
+                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+                            <input type="text" id="exampleInputWebsite1" class="form-control studentWebsite "
+                                name="exampleInputWebsite1" required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <label for="exampleInputImage1"
+                            class="col-xl-3 col-lg-3 col-md-12 col-sm-12  col-form-label">Image
+                            Link</label>
+                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+                            <input type="url" class="form-control studentImage " name="exampleInputImage1"
+                                id="exampleInputImage1" required />
+                        </div>
+                    </div>
+                    <br>
+
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-xl-3 col-lg-3 col-md-12 col-sm-12  pt-0">Gender</legend>
+                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                        value="male" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                                        value="female">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Female
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <div class="form-group row">
+                        <div class="col-md-2 col-lg-3">Skills</div>
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" class="form-check-label" type="checkbox" name="checks"
+                                    id="gridCheck1">
+                                <label for="java" id="java" for="gridCheck1">
+                                    Java
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" class="form-check-label" type="checkbox" name="checks"
+                                    id="gridCheck2">
+                                <label for="HTML" id="HTML" for="gridCheck1">
+                                    HTML
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" class="form-check-label" type="checkbox" name="checks"
+                                    id="gridCheck3">
+                                <label for="CSS" id="CSS" for="gridCheck1">
+                                    CSS
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-primary submitBtn" id="formSubmit" value="Enroll Student"
+                        name="submit">
+                    <button onclick="clearRecords();return false" class="btn btn-danger clearBtn"
+                        id="clearBtn">Clear</button>
+                </form>
+
+            </div>
+            <div class="col-xl-6 col-lg-12 col-12 col-md-12 col-sm-12 my-3">
+
+                <h5 class="tableHeading">Enrolled Students</h5>
+                <!-- Student Data Table  -->
+                <table id="studentTable">
+                    <tr>
+                        <th id="description">Description</th>
+                        <th id="image">Image</th>
+                    </tr>
+                    <tr id="emptyTableRow">
+                        <td colspan="7" style="text-align: center;background-color:white;">No Record Found</td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+            <!-- Footer -->
+        <div class="row">
+            <div class="col-xl-12 col-12 col-md-12 col-sm-12 col-lg-12 studentFormFooter">
+                Copyright 2020-2021 By Fresher Training
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
